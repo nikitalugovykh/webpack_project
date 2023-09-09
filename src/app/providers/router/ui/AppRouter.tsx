@@ -11,7 +11,7 @@ const AppRouter: FC<AppRouterProps> = () => {
         <Suspense fallback={<span>Loading...</span>}>
             <Routes>
                 {Object.values(routeConfig).map((props) => (
-                    <Route key = {props.path} {...props}/>
+                    <Route key={props.path} {...props} element = {<div className={'page-wrapper'}>{props.element}</div>}/>
                 ))}
             </Routes>
         </Suspense>

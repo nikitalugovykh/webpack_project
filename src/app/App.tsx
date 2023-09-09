@@ -4,16 +4,20 @@ import {cn} from "shared/libs/cn";
 import './styles/index.scss'
 import {AppRouter} from "app/providers/router";
 import {NavBar} from "widgets/NavBar";
+import {Sidebar} from "widgets/Sidebar";
 
 
 const App: FC = () => {
 
-   const {theme} = useTheme()
+    const {theme} = useTheme()
 
     return (
-        <div className = {cn('app', {}, [theme])}>
+        <div className={cn('app', {}, [theme])}>
             <NavBar/>
-            <AppRouter/>
+            <div className={'content-page'}>
+                <Sidebar/>
+                <AppRouter/>
+            </div>
         </div>
     )
 }
