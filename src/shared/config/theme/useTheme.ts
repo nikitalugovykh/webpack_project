@@ -1,23 +1,10 @@
-import {createContext, useContext} from "react";
-
-export const enum Theme {
-    Normal = 'normal',
-    Dark = 'dark'
-}
-export const LOCAL_STORAGE_THEME_KEY = 'theme'
-
-interface ThemeContextProps {
-    theme?: Theme
-    setTheme?: (theme: Theme) => void
-}
+import {useContext} from "react";
+import {LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext} from "./ThemeContext";
 
 interface UseThemeReturn {
     theme: Theme,
     toggleTheme: () => void
 }
-
-export const ThemeContext = createContext<ThemeContextProps>({theme: Theme.Normal, setTheme: () => {}})
-
 export const useTheme = (): UseThemeReturn => {
     const {theme, setTheme} = useContext(ThemeContext)
     const toggleTheme = () => {
@@ -27,4 +14,3 @@ export const useTheme = (): UseThemeReturn => {
     }
     return {theme, toggleTheme}
 }
-

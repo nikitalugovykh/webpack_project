@@ -1,4 +1,4 @@
-import React, {FC, lazy} from 'react'
+import {lazy} from 'react'
 
 
 export const HomePageLazy = lazy(() => new Promise((res, rej) => {
@@ -6,3 +6,4 @@ export const HomePageLazy = lazy(() => new Promise((res, rej) => {
         res(import('./HomePage') as any)
     },1000)
 }))
+

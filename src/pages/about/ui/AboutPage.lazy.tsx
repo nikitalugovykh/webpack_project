@@ -6,3 +6,4 @@ export const AboutPageLazy = lazy(() => new Promise((res, rej) => {
       res(import('./AboutPage') as any)
   },1000)
 }))
+
