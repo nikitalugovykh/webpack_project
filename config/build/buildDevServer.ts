@@ -7,5 +7,6 @@ export function buildDevServer ({paths, port}: BuildOptions): DevServerConfigura
         open: true,
         historyApiFallback: true, // нужен для react-router, чтобы при перезагрузке страницы не выдавало 404,  мы проксируем все через единый index.html файл, те
     //     если при перезагрузке страницы мы неи будем искать html файл about.html, а просто отдадим index.html (тк это SPA приложение)
+    //     hot: true,
     })
 }

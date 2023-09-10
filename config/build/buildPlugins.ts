@@ -2,27 +2,30 @@ import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
 import {BuildOptions} from "./types/config";
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 
 export const buildPlugins = ({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] => {
 
-    const htmlWebpackPlugin = new HtmlWebpackPlugin({
-        template: paths.html,
-    })
-    const progressPlugin = new webpack.ProgressPlugin()
+    const plugins = []
 
-    const miniCssExtractPlugin = new MiniCssExtractPlugin({
+    plugins.push(new HtmlWebpackPlugin({
+        template: paths.html,
+    }))
+    plugins.push(new webpack.ProgressPlugin())
+
+    plugins.push(new MiniCssExtractPlugin({
         filename: 'css/[name].[contenthash].css',
         chunkFilename: 'css/[id].[contenthash].css',
-    })
+    }))
 
-    const definePlugin = new webpack.DefinePlugin({
+    plugins.push(new webpack.DefinePlugin({
         __IS_DEV__: isDev,
-    }) // плагин для пробрасывания переменных в код
+    })) // плагин для пробрасывания переменных в код
 
-    return [
-        htmlWebpackPlugin,
-        progressPlugin,
-        miniCssExtractPlugin,
-        definePlugin
-    ]
+    if (isDev) {
+        plugins.push(new webpack.HotModuleReplacementPlugin())
+        plugins.push(new ReactRefreshWebpackPlugin())
+    }
+
+    return plugins
 }
