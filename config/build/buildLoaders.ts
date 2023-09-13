@@ -1,78 +1,72 @@
-import webpack from "webpack";
-import {BuildOptions} from "./types/config";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import type webpack from 'webpack'
+import { type BuildOptions } from './types/config'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
-export const buildLoaders = ({paths, isDev}: BuildOptions): webpack.RuleSetRule[] => {
-
+export const buildLoaders = ({ isDev }: BuildOptions): webpack.RuleSetRule[] => {
     const tsLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
+        exclude: /node_modules/
     }
-
 
     const svgLoader = {
         test: /\.svg$/,
-            use: ['@svgr/webpack'],
+        use: ['@svgr/webpack']
     }
 
-    const fileLoader =  {
-            test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-            type: "asset/resource"
-            // use: [
-            //     {
-            //         loader: 'file-loader',
-            //     },
-            // ],
-        }
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        type: 'asset/resource'
+        // use: [
+        //     {
+        //         loader: 'file-loader',
+        //     },
+        // ],
+    }
 
-
-    const cssLoaderSettings =  {
-            loader: "css-loader",
-            options: {
-                modules: {
-                    auto: (path: string) => path.includes('.module.'),
-                    localIdentName: isDev ? "[path][name]__[local]--[hash:base64:5]" : "[hash:base64:8]",
-                },
+    const cssLoaderSettings = {
+        loader: 'css-loader',
+        options: {
+            modules: {
+                auto: (path: string) => path.includes('.module.'),
+                localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]'
             }
         }
-
+    }
 
     const cssLoader = {
         test: /\.css$/i,
         use: [
-            isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             cssLoaderSettings
-        ],
+        ]
     }
-
 
     const scssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
             // style-loader - добавляет стили в один файл js
-            //MiniCssExtractPlugin.loader - добавляет стили в отдельный файл css
-            isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+            // MiniCssExtractPlugin.loader - добавляет стили в отдельный файл css
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             // Creates `style` nodes from JS strings
             cssLoaderSettings,
             // Compiles Sass to CSS
-            "sass-loader",
-        ],
+            'sass-loader'
+        ]
     }
-
 
     const babelLoader = {
         test: /\.(js|ts|tsx|jsx)$/,
         exclude: /node_modules/,
         use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env'],
                 plugins: [
-                    ["i18next-extract", {
+                    ['i18next-extract', {
                         locales: [
-                            "ru",
-                            "en"
+                            'ru',
+                            'en'
                         ],
                         keyAsDefaultValue: true
                     }]]
@@ -86,6 +80,6 @@ export const buildLoaders = ({paths, isDev}: BuildOptions): webpack.RuleSetRule[
         cssLoader,
         scssLoader,
         svgLoader,
-        fileLoader,
+        fileLoader
     ]
 }

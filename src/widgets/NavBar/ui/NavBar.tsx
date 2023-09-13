@@ -1,14 +1,13 @@
-import React, {FC} from 'react'
+import { type FC } from 'react'
 import styles from './NavBar.module.scss'
-import {cn} from "shared/libs/cn";
-import {AppLink} from "shared/ui/AppLink";
-import {ThemeSwitcher} from "widgets/ThemeSwitcher";
+import { cn } from 'shared/libs/cn'
+import { AppLink } from 'shared/ui/AppLink'
 
 interface NavBarProps {
     className?: string
 }
 
-export const NavBar:FC<NavBarProps> = ({className}) => {
+export const NavBar: FC<NavBarProps> = ({ className }) => {
     return (
         <div className={cn(styles.navbar, {}, [className])}>
             <div className={styles.links}>
@@ -18,4 +17,3 @@ export const NavBar:FC<NavBarProps> = ({className}) => {
         </div>
     )
 }
-

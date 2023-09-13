@@ -1,4 +1,4 @@
-export {useTheme} from './useTheme'
+export { useTheme } from './useTheme'
 export {
     ThemeContext,
     Theme,
