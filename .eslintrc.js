@@ -26,6 +26,7 @@ module.exports = {
         '@typescript-eslint/strict-boolean-expressions': 'off',
         '@typescript-eslint/no-floating-promises': 'off',
         '@typescript-eslint/naming-convention': [1],
-        'i18next/no-literal-string': 2
+        'i18next/no-literal-string': 2,
+        "react/prop-types": "off",
     }
 }
