@@ -1,6 +1,6 @@
 import { type FC } from 'react'
 import styles from './NavBar.module.scss'
-import { cn } from 'shared/libs/cn'
+import { cn } from 'shared/libs/className/cn'
 import { AppLink } from 'shared/ui/AppLink'
 import { useTranslation } from 'react-i18next'
 

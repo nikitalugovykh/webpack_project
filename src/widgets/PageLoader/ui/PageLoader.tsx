@@ -1,5 +1,5 @@
 import { type FC } from 'react'
-import { cn } from 'shared/libs/cn'
+import { cn } from 'shared/libs/className/cn'
 import styles from './PageLoader.module.scss'
 import { Loader } from 'shared/ui/Loader'
 

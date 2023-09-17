@@ -10,12 +10,12 @@
     "paths": {
       "*": ["src/*"]
     },
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
-//  "include": ["./.eslintrc.js"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

@@ -1,5 +1,5 @@
 import { type FC } from 'react'
-import { cn } from 'shared/libs/cn'
+import { cn } from 'shared/libs/className/cn'
 import styles from './PageError.module.scss'
 import { useTranslation } from 'react-i18next'
 import { Button } from 'shared/ui/Button'

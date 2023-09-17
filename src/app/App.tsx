@@ -1,6 +1,6 @@
 import { type FC, Suspense } from 'react'
 import { useTheme } from 'shared/config/theme'
-import { cn } from 'shared/libs/cn'
+import { cn } from 'shared/libs/className/cn'
 import './styles/index.scss'
 import { AppRouter } from 'app/providers/router'
 import { NavBar } from 'widgets/NavBar'

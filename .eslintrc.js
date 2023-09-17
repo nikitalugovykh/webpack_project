@@ -26,7 +26,13 @@ module.exports = {
         '@typescript-eslint/strict-boolean-expressions': 'off',
         '@typescript-eslint/no-floating-promises': 'off',
         '@typescript-eslint/naming-convention': [1],
-        'i18next/no-literal-string': 2,
+        'i18next/no-literal-string': ['error', {markupOnly: true, "ignoreAttribute": ["data-testid"]}],
         "react/prop-types": "off",
+        "@typescript-eslint/no-misused-promises": [
+            "error",
+            {
+                "checksVoidReturn": false
+            }
+        ]
     }
 }
