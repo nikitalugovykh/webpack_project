@@ -3,15 +3,22 @@ module.exports = {
         browser: true,
         es2021: true
     },
+    settings: {
+        react: {
+            version: "detect"
+        }
+    },
     extends: [
         'plugin:react/recommended',
         'standard-with-typescript'
     ],
-    overrides: [
-    ],
+    overrides: [],
     parserOptions: {
         ecmaVersion: 'latest',
-        sourceType: 'module'
+        sourceType: 'module',
+        ecmaFeatures: {
+            "jsx": true
+        }
     },
     plugins: [
         'react',
@@ -19,7 +26,9 @@ module.exports = {
     ],
     rules: {
         'react/react-in-jsx-scope': 'off',
-        'react/jsx-uses-react': 'off',
+        // 'react/jsx-uses-react': 'off',
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
         'react/jsx-indent': [2, 4],
         '@typescript-eslint/indent': [2, 4],

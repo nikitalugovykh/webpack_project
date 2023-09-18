@@ -1,9 +1,7 @@
-import {lazy} from 'react'
+import { lazy } from 'react'
 
-
-export const HomePageLazy = lazy(() => new Promise((res, rej) => {
+export const HomePageLazy = lazy(async () => await new Promise((resolve) => {
     setTimeout(() => {
-        res(import('./HomePage') as any)
-    },1000)
+        resolve(import('./HomePage') as any)
+    }, 1000)
 }))
-
