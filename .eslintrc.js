@@ -8,10 +8,7 @@ module.exports = {
             version: "detect"
         }
     },
-    extends: [
-        'plugin:react/recommended',
-        'standard-with-typescript'
-    ],
+    extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:storybook/recommended'],
     overrides: [],
     parserOptions: {
         ecmaVersion: 'latest',
@@ -37,6 +34,7 @@ module.exports = {
         '@typescript-eslint/naming-convention': [1],
         'i18next/no-literal-string': ['error', {markupOnly: true, "ignoreAttribute": ["data-testid"]}],
         "react/prop-types": "off",
+        "@typescript-eslint/consistent-type-assertions": 'off',
         "@typescript-eslint/no-misused-promises": [
             "error",
             {

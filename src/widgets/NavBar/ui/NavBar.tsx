@@ -14,8 +14,8 @@ export const NavBar: FC<NavBarProps> = ({ className }) => {
     return (
         <div className={cn(styles.navbar, {}, [className])}>
             <div className={styles.links}>
-                <AppLink variant={'secondary'} to ={'/'}>{tHome('Home page')}</AppLink>
-                <AppLink to ={'/about'}>{tAbout('About page')}</AppLink>
+                <AppLink variant={'secondary'} to={'/'}>{tHome('Home page')}</AppLink>
+                <AppLink to={'/about'}>{tAbout('About page')}</AppLink>
             </div>
         </div>
     )

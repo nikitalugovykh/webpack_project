@@ -5,7 +5,7 @@ import styles from './Button.module.scss'
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
     children: ReactNode
-    theme?: 'primary' | 'secondary' | 'clear'
+    theme?: 'primary' | 'secondary' | 'clear' | 'outline'
 }
 
 const Button: FC<ButtonProps> = ({ className, children, theme = 'primary', ...rest }) => {
