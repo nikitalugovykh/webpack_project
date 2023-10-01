@@ -3,8 +3,12 @@ import { cn } from 'shared/libs/className'
 import styles from './Sidebar.module.scss'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import { LangSwitcher } from 'widgets/LangSwitcher'
-import { useTranslation } from 'react-i18next'
 import { Button } from 'shared/ui/Button'
+import { AppLink } from 'shared/ui/AppLink'
+import { useTranslation } from 'react-i18next'
+import { RoutePath } from 'shared/config/routeConfig'
+import HomeIcon from 'shared/assets/icons/home.svg'
+import AboutIcon from 'shared/assets/icons/about.svg'
 
 interface SidebarProps {
     className?: string
@@ -13,7 +17,8 @@ interface SidebarProps {
 export const Sidebar: FC<SidebarProps> = (
     { className }) => {
     const [collapsed, setCollapsed] = useState(false)
-    const { t } = useTranslation()
+    const { t: tAbout } = useTranslation('about')
+    const { t: tHome } = useTranslation('home')
 
     const onToggle = (): void => {
         setCollapsed(prevState => !prevState)
@@ -21,10 +26,36 @@ export const Sidebar: FC<SidebarProps> = (
 
     return (
         <div data-testid={'sidebar'} className={cn(styles.Sidebar, { [styles.collapsed]: collapsed }, [className])}>
-            <Button data-testid={'sidebar-toggle'} onClick={onToggle}>{collapsed ? t('Open') : t('Close')}</Button>
+            <Button
+                className={styles.collapseBtn}
+                data-testid={'sidebar-toggle'}
+                onClick={onToggle}
+                theme={'backgroundInverted'}
+                square
+                size={'medium'}
+            >
+                {collapsed ? '>' : '<'}
+            </Button>
+            <div className={styles.items}>
+                <AppLink
+                    className={styles.item}
+                    variant={'secondary'}
+                    to={RoutePath.home}
+                >
+                    <HomeIcon className={styles.icon}/>
+                    {collapsed ? '' : <span className={cn(styles.link, { collapsed })}>{tHome('Home page')}</span>}
+                </AppLink>
+                <AppLink
+                    className={styles.item}
+                    to={RoutePath.about}
+                >
+                    <AboutIcon className={styles.icon}/>
+                    {collapsed ? '' : <span className={cn(styles.link, { collapsed })}>{tAbout('About page')}</span>}
+                </AppLink>
+            </div>
             <div className={styles.switchers}>
                 <ThemeSwitcher/>
-                <LangSwitcher/>
+                <LangSwitcher short={collapsed}/>
             </div>
         </div>
     )

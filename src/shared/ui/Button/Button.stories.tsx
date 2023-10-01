@@ -40,6 +40,36 @@ export const PrimaryDark: Story = {
     decorators: [ThemeDecorator(Theme.Dark)]
 }
 
+export const Background: Story = {
+    args: {
+        theme: 'background',
+        children: 'Click on me!'
+    }
+}
+
+export const BackgroundDark: Story = {
+    args: {
+        theme: 'background',
+        children: 'Click on me!'
+    },
+    decorators: [ThemeDecorator(Theme.Dark)]
+}
+
+export const BackgroundInverted: Story = {
+    args: {
+        theme: 'backgroundInverted',
+        children: 'Click on me!'
+    }
+}
+
+export const BackgroundInvertedDark: Story = {
+    args: {
+        theme: 'backgroundInverted',
+        children: 'Click on me!'
+    },
+    decorators: [ThemeDecorator(Theme.Dark)]
+}
+
 export const Secondary: Story = {
     args: {
         theme: 'secondary',
@@ -69,16 +99,62 @@ export const ClearDark: Story = {
     decorators: [ThemeDecorator(Theme.Dark)]
 }
 
-export const Outline: Story = {
+export const OutlineSmall: Story = {
     args: {
         theme: 'outline',
         children: 'Click on me!'
     }
 }
+
+export const OutlineMedium: Story = {
+    args: {
+        theme: 'outline',
+        size: 'medium',
+        children: 'Click on me!'
+    }
+}
+export const OutlineLarge: Story = {
+    args: {
+        theme: 'outline',
+        size: 'large',
+        children: 'Click on me!'
+    }
+}
+
 export const OutlineDark: Story = {
     args: {
         theme: 'outline',
         children: 'Click on me!'
+    },
+    decorators: [ThemeDecorator(Theme.Dark)]
+}
+
+export const SquareSmall: Story = {
+    args: {
+        theme: 'backgroundInverted',
+        square: true,
+        size: 'small',
+        children: '>'
+    },
+    decorators: [ThemeDecorator(Theme.Dark)]
+}
+
+export const SquareMedium: Story = {
+    args: {
+        theme: 'backgroundInverted',
+        size: 'medium',
+        square: true,
+        children: '>'
+    },
+    decorators: [ThemeDecorator(Theme.Dark)]
+}
+
+export const SquareLarge: Story = {
+    args: {
+        theme: 'backgroundInverted',
+        size: 'large',
+        square: true,
+        children: '>'
     },
     decorators: [ThemeDecorator(Theme.Dark)]
 }

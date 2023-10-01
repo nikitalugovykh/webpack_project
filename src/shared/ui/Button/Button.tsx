@@ -5,12 +5,28 @@ import styles from './Button.module.scss'
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
     children: ReactNode
-    theme?: 'primary' | 'secondary' | 'clear' | 'outline'
+    theme?: 'primary' | 'secondary' | 'clear' | 'outline' | 'background' | 'backgroundInverted'
+    square?: boolean
+    size?: 'small' | 'medium' | 'large'
 }
 
-const Button: FC<ButtonProps> = ({ className, children, theme = 'primary', ...rest }) => {
+const Button: FC<ButtonProps> = (
+    {
+        className,
+        children,
+        theme = 'primary',
+        size = 'small',
+        square,
+        ...rest
+    }) => {
+    const mods: Record<string, boolean> = {
+        [styles.square]: square,
+        [styles[size]]: !!size
+
+    }
+
     return (
-        <button className={cn(styles.Button, {}, [className, styles[theme]])} {...rest}>{children}</button>
+        <button className={cn(styles.Button, mods, [className, styles[theme]])} {...rest}>{children}</button>
     )
 }
 
