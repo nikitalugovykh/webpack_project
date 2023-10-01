@@ -2,7 +2,12 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import type webpack from 'webpack'
 import { type BuildOptions } from '../types/config'
 
-const getCssLoaderSettings = (isDev: boolean) => {
+interface CssLoaderSettings {
+    loader: string
+    options: Record<string, any>
+}
+
+const getCssLoaderSettings = (isDev: boolean): CssLoaderSettings => {
     return {
         loader: 'css-loader',
         options: {
