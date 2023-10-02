@@ -43,14 +43,14 @@ export const Sidebar: FC<SidebarProps> = (
                     to={RoutePath.home}
                 >
                     <HomeIcon className={styles.icon}/>
-                    {collapsed ? '' : <span className={cn(styles.link, { collapsed })}>{tHome('Home page')}</span>}
+                    <span className={cn(styles.link, { collapsed })}>{tHome('Home page')}</span>
                 </AppLink>
                 <AppLink
                     className={styles.item}
                     to={RoutePath.about}
                 >
                     <AboutIcon className={styles.icon}/>
-                    {collapsed ? '' : <span className={cn(styles.link, { collapsed })}>{tAbout('About page')}</span>}
+                    <span className={cn(styles.link, { collapsed })}>{tAbout('About page')}</span>
                 </AppLink>
             </div>
             <div className={styles.switchers}>

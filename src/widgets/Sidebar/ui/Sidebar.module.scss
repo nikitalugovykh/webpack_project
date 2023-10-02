@@ -15,11 +15,20 @@
     gap: 10px;
 }
 
+.link {
+    display: block;
+    white-space: nowrap;
+}
+
 .collapsed {
     width: var(--sidebar-width-collapsed);
 
     .switchers {
         flex-direction: column;
+    }
+
+    .link {
+        display: none;
     }
 }
 
@@ -41,16 +50,6 @@
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.link {
-    transition: display 0.3s ease-in-out;
-    display: block;
-
-}
-
-.collapsedLink {
-    display: none !important;
 }
 
 .icon {
