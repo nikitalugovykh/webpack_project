@@ -15,6 +15,9 @@
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
     "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:json": "node scripts/generate-visual-json-report.js",
+    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
@@ -64,6 +67,7 @@
     "loki": "^0.32.0",
     "mini-css-extract-plugin": "^2.7.6",
     "react-refresh": "^0.14.0",
+    "reg-cli": "^0.17.7",
     "sass": "^1.66.1",
     "sass-loader": "^13.3.2",
     "storybook": "^7.4.2",
@@ -91,23 +95,23 @@
     "looks-same": {
       "ignoreCaret": true
     },
-      "configurations": {
-        "chrome.laptop": {
-          "target": "chrome.docker",
-          "width": 1366,
-          "height": 768,
-          "deviceScaleFactor": 1,
-          "mobile": false
-        },
-        "chrome.iphone7": {
-          "target": "chrome.docker",
-          "preset": "iPhone 7"
-        }
-      }
-    },
-    "overrides": {
-      "loki": {
-        "@storybook/react": "$@storybook/react"
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.docker",
+        "preset": "iPhone 7"
       }
     }
+  },
+  "overrides": {
+    "loki": {
+      "@storybook/react": "$@storybook/react"
+    }
   }
+}
