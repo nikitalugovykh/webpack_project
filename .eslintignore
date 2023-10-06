@@ -1,2 +1,4 @@
 dist
 .eslintrc.js
+scripts/*.js
+storybook-static/**/*.js
