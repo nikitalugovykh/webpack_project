@@ -91,6 +91,13 @@ export const Clear: Story = {
         children: 'Click on me!'
     }
 }
+
+export const ClearInverted: Story = {
+    args: {
+        theme: 'clearInverted',
+        children: 'Click on me!'
+    }
+}
 export const ClearDark: Story = {
     args: {
         theme: 'clear',

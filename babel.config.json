@@ -8,6 +8,5 @@
     }]
   ],
   "plugins": [
-    "i18next-extract"
   ]
 }

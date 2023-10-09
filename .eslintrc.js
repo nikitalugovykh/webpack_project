@@ -9,7 +9,14 @@ module.exports = {
         }
     },
     extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:storybook/recommended'],
-    overrides: [],
+    overrides: [
+        {
+            files: ['**/src/**/*.{test,stories}.{tsx,ts}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            }
+        }
+    ],
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
@@ -19,7 +26,8 @@ module.exports = {
     },
     plugins: [
         'react',
-        'i18next'
+        'i18next',
+        'react-hooks'
     ],
     rules: {
         'react/react-in-jsx-scope': 'off',
@@ -40,6 +48,8 @@ module.exports = {
             {
                 "checksVoidReturn": false
             }
-        ]
+        ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error",
     }
 }

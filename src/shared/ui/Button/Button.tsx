@@ -5,7 +5,7 @@ import styles from './Button.module.scss'
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
     children: ReactNode
-    theme?: 'primary' | 'secondary' | 'clear' | 'outline' | 'background' | 'backgroundInverted'
+    theme?: 'primary' | 'secondary' | 'clear' | 'clearInverted' | 'outline' | 'background' | 'backgroundInverted'
     square?: boolean
     size?: 'small' | 'medium' | 'large'
 }
