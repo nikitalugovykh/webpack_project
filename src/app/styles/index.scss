@@ -3,6 +3,7 @@
 @forward "themes/light";
 @forward "reset";
 @forward "mixins";
+@forward "fonts/fonts";
 
 body {
     font: var(--font-m);
