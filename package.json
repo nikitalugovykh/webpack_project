@@ -21,7 +21,8 @@
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
-    "prepared": "npm run test:unit && npm run lint:scss && npm run lint:ts"
+    "prepared": "npm run test:unit && npm run lint:scss && npm run lint:ts",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -84,7 +85,8 @@
     "webpack": "^5.88.2",
     "webpack-bundle-analyzer": "^4.9.1",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-dev-server": "^4.15.1",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
