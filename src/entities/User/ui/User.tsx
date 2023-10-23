@@ -1,6 +1,5 @@
 import { type FC } from 'react'
 import { cn } from 'shared/libs/className'
-import styles from './User.module.scss'
 
 interface UserProps {
     className?: string
@@ -8,6 +7,6 @@ interface UserProps {
 
 export const User: FC<UserProps> = ({ className }) => {
     return (
-        <div className={cn(styles.User, {}, [className])}></div>
+        <div className={cn('', {}, [className])}></div>
     )
 }

@@ -1,4 +1,4 @@
-import { type ChangeEvent, type FC, type InputHTMLAttributes, memo, useState } from 'react'
+import { type ChangeEvent, type FC, type InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react'
 import { cn } from 'shared/libs/className'
 import styles from './Input.module.scss'
 
@@ -8,10 +8,12 @@ interface InputProps extends InputType {
     className?: string
     value?: string
     onChange?: (value: string) => void
+    autofocus?: boolean
 }
 
 export const Input: FC<InputProps> = memo((props) => {
-    const { className, value, onChange, placeholder, ...rest } = props
+    const { className, autofocus, value, onChange, placeholder, ...rest } = props
+    const inputRef = useRef<HTMLInputElement>(null)
 
     const [isFocus, setIsFocus] = useState(false)
 
@@ -30,15 +32,27 @@ export const Input: FC<InputProps> = memo((props) => {
         setIsFocus(true)
     }
 
+    const onSelectHandler = (e: ChangeEvent<HTMLInputElement>): void => {
+        setCaretPosition(e?.target?.selectionStart || 0)
+    }
+
+    useEffect(() => {
+        if (autofocus) {
+            inputRef.current?.focus()
+        }
+    }, [autofocus])
+
     return (
         <div className={cn(styles.InputWrapper, {}, [className])}>
             {placeholder && <div className={styles.placeholder}>{`${placeholder} > `}</div>}
             <div className={styles.caretWrapper}>
                 <input
+                    ref={inputRef}
                     onBlur={onBlur}
                     onFocus={onFocus}
                     className={styles.input}
                     onChange={onChangeHandler}
+                    onSelect = {onSelectHandler}
                     {...rest}
                 />
                 {isFocus && <span

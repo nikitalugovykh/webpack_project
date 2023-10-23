@@ -3,7 +3,6 @@ import styles from './NavBar.module.scss'
 import { cn } from 'shared/libs/className/cn'
 import { useTranslation } from 'react-i18next'
 import { Button } from 'shared/ui/Button'
-import { Modal } from 'shared/ui/Modal'
 import { LoginModal } from 'features/AuthByUserName'
 
 interface NavBarProps {

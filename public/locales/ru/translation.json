@@ -6,5 +6,7 @@
   "Close": "Закрыть",
   "Page not found": "Страница не найдена",
   "Something went wrong": "Произошка какая-то ошибка!",
-  "Update page": "Update page"
+  "Update page": "Обновить страницу",
+  "Enter username": "Введите username",
+  "Enter password":"Введите пароль"
 }

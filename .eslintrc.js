@@ -8,7 +8,12 @@ module.exports = {
             version: "detect"
         }
     },
-    extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:storybook/recommended'],
+    extends: [
+        'plugin:react/recommended',
+        'standard-with-typescript',
+        'plugin:i18next/recommended',
+        'plugin:storybook/recommended'
+    ],
     overrides: [
         {
             files: ['**/src/**/*.{test,stories}.{tsx,ts}'],
