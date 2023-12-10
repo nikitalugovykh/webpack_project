@@ -1,10 +1,18 @@
-import { type FC, Suspense } from 'react'
+import { type FC, Suspense, useEffect } from 'react'
 import { AppRouter } from 'app/providers/router'
 import { NavBar } from 'widgets/NavBar'
 
 import { Sidebar } from 'widgets/Sidebar'
+import { useDispatch } from 'react-redux'
+import { userActions } from 'entities/User'
 
 const App: FC = () => {
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(userActions.initAuthData())
+    }, [dispatch])
+
     return (
         <div className={'app'}>
             <Suspense fallback={''}>

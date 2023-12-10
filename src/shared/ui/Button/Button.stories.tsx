@@ -165,3 +165,12 @@ export const SquareLarge: Story = {
     },
     decorators: [ThemeDecorator(Theme.Dark)]
 }
+
+export const Disabled: Story = {
+    args: {
+        theme: 'backgroundInverted',
+        disabled: true,
+        children: '>'
+    },
+    decorators: [ThemeDecorator(Theme.Dark)]
+}

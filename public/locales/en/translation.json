@@ -9,5 +9,8 @@
   "Update page": "Update page",
   "Enter username": "Enter username",
   "Enter password":"Enter password",
-  "Submit": "Submit"
+  "Submit": "Submit",
+  "Authorization form": "Authorization form",
+  "You have entered an invalid username or password": "You have entered an invalid username or password",
+  "Logout": "Logout"
 }

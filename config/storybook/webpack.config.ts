@@ -1,4 +1,4 @@
-import type webpack from 'webpack'
+import webpack from 'webpack'
 import { type BuildOptions, type BuildPaths } from '../build/types/config'
 import path from 'path'
 import { buildCssLoader, buildScssLoader } from '../build/loaders/buildStyleLoaders'
@@ -26,6 +26,10 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
     config.module.rules.push(buildSvgLoader())
     config.module.rules.push(buildCssLoader({ isDev: true } as BuildOptions))
     config.module.rules.push(buildScssLoader({ isDev: true } as BuildOptions))
+
+    config.plugins.push(new webpack.DefinePlugin({
+        __IS_DEV__: true
+    }))
 
     return config
 }
