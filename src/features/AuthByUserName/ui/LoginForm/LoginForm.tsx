@@ -17,7 +17,7 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
         >
             <Input autofocus placeholder={t('Enter username')} type="text"/>
             <Input placeholder={t('Enter password')} type="text"/>
-            <Button className={styles.loginBtn}>{t('hello')}</Button>
+            <Button className={styles.loginBtn}>{t('Submit')}</Button>
         </div>
 
     )

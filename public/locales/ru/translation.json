@@ -8,5 +8,6 @@
   "Something went wrong": "Произошка какая-то ошибка!",
   "Update page": "Обновить страницу",
   "Enter username": "Введите username",
-  "Enter password":"Введите пароль"
+  "Enter password":"Введите пароль",
+  "Submit": "Отправить"
 }

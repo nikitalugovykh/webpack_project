@@ -2,11 +2,12 @@
   "Translate": "Translate",
   "Language": "English",
   "ShortLanguage": "Ru",
-  "Сlose": "Сlose",
+  "Close": "Close",
   "Open": "Open",
   "Page not found": "Page not found",
   "Something went wrong": "Something went wrong!",
   "Update page": "Update page",
   "Enter username": "Enter username",
-  "Enter password":"Enter password"
+  "Enter password":"Enter password",
+  "Submit": "Submit"
 }
