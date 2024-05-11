@@ -5,7 +5,7 @@ import {
 import i18nForTest from 'shared/config/i18n/i18n_forTest'
 import { I18nextProvider } from 'react-i18next'
 import { render, type RenderResult } from '@testing-library/react'
-import { StoreProvider } from 'app/providers/StoreProvider'
+import { StoreProvider } from 'app/store/StoreProvider'
 import { type DeepPartial } from '@reduxjs/toolkit'
 import { type StateScheme } from 'app/store'
 

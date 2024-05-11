@@ -38,6 +38,7 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         // 'react/jsx-uses-react': 'off',
         "react/jsx-uses-react": "error",
+        "@typescript-eslint/explicit-function-return-type": 'off',
         "react/jsx-uses-vars": "error",
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
         'react/jsx-indent': [2, 4],
