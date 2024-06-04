@@ -12,7 +12,6 @@ export interface StateScheme {
     // async reducers
     loginForm?: LoginScheme
 }
-
 export type StateSchemaKey = keyof StateScheme
 
 export interface IReducerManager {
