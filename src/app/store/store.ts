@@ -1,4 +1,4 @@
-import { configureStore, type ReducersMapObject } from '@reduxjs/toolkit'
+import { type AnyAction, configureStore, type ReducersMapObject, type ThunkDispatch } from '@reduxjs/toolkit'
 import { type EnhancedStore } from '@reduxjs/toolkit/src/configureStore'
 import { type StateScheme } from './types/StateScheme'
 import { counterReducer } from 'entities/Counter'
@@ -26,3 +26,9 @@ export function createReduxStore (initialStore?: StateScheme, asyncReducers?: Re
 
     return store
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
+
+export type AppState = ReturnType<typeof createReduxStore>['getState']
+
+export type TypedDispatch<T> = ThunkDispatch<T, any, AnyAction>

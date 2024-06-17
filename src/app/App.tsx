@@ -3,11 +3,11 @@ import { AppRouter } from 'app/providers/router'
 import { NavBar } from 'widgets/NavBar'
 
 import { Sidebar } from 'widgets/Sidebar'
-import { useDispatch } from 'react-redux'
 import { userActions } from 'entities/User'
+import { useAppDispatch } from 'shared/hooks/useAppDispatch'
 
 const App: FC = () => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         dispatch(userActions.initAuthData())

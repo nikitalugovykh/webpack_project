@@ -4,8 +4,9 @@ import { cn } from 'shared/libs/className/cn'
 import { useTranslation } from 'react-i18next'
 import { Button } from 'shared/ui/Button'
 import { LoginModal } from 'features/AuthByUserName'
-import { useDispatch, useSelector } from 'react-redux'
 import { getAuthUserData, userActions } from 'entities/User'
+import { useAppSelector } from 'shared/hooks/useAppSelector'
+import { useAppDispatch } from 'shared/hooks/useAppDispatch'
 
 interface NavBarProps {
     className?: string
@@ -13,8 +14,8 @@ interface NavBarProps {
 
 export const NavBar: FC<NavBarProps> = ({ className }) => {
     const { t } = useTranslation()
-    const authData = useSelector(getAuthUserData)
-    const dispatch = useDispatch()
+    const authData = useAppSelector(getAuthUserData)
+    const dispatch = useAppDispatch()
     const [isAuthModal, setAuthModal] = useState<boolean>(false)
 
     const onCloseModal = useCallback(() => {
