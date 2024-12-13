@@ -5,7 +5,7 @@ import { type BuildOptions } from './types/config'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
-export const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] => {
+export const buildPlugins = ({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] => {
     const plugins = []
 
     plugins.push(new HtmlWebpackPlugin({
@@ -19,7 +19,8 @@ export const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPlu
     }))
 
     plugins.push(new webpack.DefinePlugin({
-        __IS_DEV__: isDev
+        __IS_DEV__: JSON.stringify(isDev),
+        __API__: JSON.stringify(apiUrl)
     })) // плагин для пробрасывания переменных в код
 
     if (isDev) {
