@@ -15,20 +15,13 @@
     gap: 10px;
 }
 
-.link {
-    display: block;
-    white-space: nowrap;
-}
+
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
 
     .switchers {
         flex-direction: column;
-    }
-
-    .link {
-        display: none;
     }
 }
 
@@ -46,14 +39,5 @@
     padding: 0 30px;
 }
 
-.item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.icon {
-    fill: var(--inverted-primary-color)
-}
 
 

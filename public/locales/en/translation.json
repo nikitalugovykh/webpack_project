@@ -12,5 +12,8 @@
   "Submit": "Submit",
   "Authorization form": "Authorization form",
   "You have entered an invalid username or password": "You have entered an invalid username or password",
-  "Logout": "Logout"
+  "Logout": "Logout",
+  "Home page": "Home page",
+  "Profile page": "Profile page",
+  "About page": "About page"
 }

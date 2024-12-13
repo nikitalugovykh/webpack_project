@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes, type FC, type ReactNode } from 'react'
+import { type ButtonHTMLAttributes, type FC, memo, type ReactNode } from 'react'
 import { cn } from 'shared/libs/className/cn'
 import styles from './Button.module.scss'
 
@@ -33,4 +33,4 @@ const Button: FC<ButtonProps> = (
     )
 }
 
-export default Button
+export default memo(Button)

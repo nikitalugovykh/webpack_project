@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import { type FC, memo } from 'react'
 import { cn } from 'shared/libs/className'
 import styles from './Text.module.scss'
 
@@ -14,7 +14,8 @@ interface TextProps {
     theme?: TextTheme
 }
 
-export const Text: FC<TextProps> = ({ className, title, text, theme = TextTheme.PRIMARY }) => {
+// eslint-disable-next-line react/display-name
+export const Text: FC<TextProps> = memo(({ className, title, text, theme = TextTheme.PRIMARY }) => {
     return (
         <div
             className={cn('', {}, [className, styles[theme]])}
@@ -23,4 +24,4 @@ export const Text: FC<TextProps> = ({ className, title, text, theme = TextTheme.
             {text && <p className={styles.text}>{text}</p>}
         </div>
     )
-}
+})

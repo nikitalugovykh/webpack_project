@@ -19,6 +19,7 @@ export function createReducerManager (initialReducers: ReducersMapObject<StateSc
         // This will be passed to the store
         reduce: (state: StateScheme, action: AnyAction) => {
             // If any reducers have been removed, clean up their state first
+
             if (keysToRemove.length > 0) {
                 state = { ...state }
                 for (const key of keysToRemove) {
@@ -34,13 +35,13 @@ export function createReducerManager (initialReducers: ReducersMapObject<StateSc
 
         // Adds a new reducer with the specified key
         add: (key: StateSchemaKey, reducer: Reducer) => {
+            console.log(reducers[key], key)
             if (!key || reducers[key]) {
                 return
             }
 
             // Add the reducer to the reducer mapping
             reducers[key] = reducer
-
             // Generate a new combined reducer
             combinedReducer = combineReducers(reducers)
         },

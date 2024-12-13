@@ -1,4 +1,4 @@
-import { type FC, useState, useCallback } from 'react'
+import { type FC, useState, useCallback, memo } from 'react'
 import styles from './NavBar.module.scss'
 import { cn } from 'shared/libs/className/cn'
 import { useTranslation } from 'react-i18next'
@@ -12,7 +12,8 @@ interface NavBarProps {
     className?: string
 }
 
-export const NavBar: FC<NavBarProps> = ({ className }) => {
+// eslint-disable-next-line react/display-name
+export const NavBar: FC<NavBarProps> = memo(({ className }) => {
     const { t } = useTranslation()
     const authData = useAppSelector(getAuthUserData)
     const dispatch = useAppDispatch()
@@ -52,4 +53,4 @@ export const NavBar: FC<NavBarProps> = ({ className }) => {
             {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal}/>}
         </div>
     )
-}
+})

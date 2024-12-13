@@ -12,5 +12,8 @@
   "Submit": "Отправить",
   "Authorization form": "Форма авторизации",
   "You have entered an invalid username or password": "Вы ввели неверный логин или пароль",
-  "Logout": "Выйти"
+  "Logout": "Выйти",
+  "Home page": "Домашняя старница",
+  "Profile page": "Профиль",
+  "About page": "О нас"
 }
