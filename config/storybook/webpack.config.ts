@@ -16,12 +16,10 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
     config.resolve!.modules!.push(paths.src)
     config.resolve!.extensions!.push('.ts', '.tsx')
 
-    config.module!.rules = config.module!.rules!.map<webpack.RuleSetRule>((rule) => {
-        // eslint-disable-next-line @typescript-eslint/prefer-includes,@typescript-eslint/ban-ts-comment
-        // @ts-expect-error
-        if ((rule.test as string).includes('svg')) {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-expect-error
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    config.module!.rules = config.module!.rules!.map((rule: webpack.RuleSetRule) => {
+        if (typeof rule.test === 'string' && (rule.test).includes('\'svg\'')) {
             return { ...rule, exclude: /\.svg$/i }
         }
 
