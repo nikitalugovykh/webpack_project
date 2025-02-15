@@ -1,5 +1,4 @@
 import { getCounterSelector } from './getCounterSelector'
-import { type DeepPartial } from '@reduxjs/toolkit'
 import { type StateScheme } from 'app/store'
 
 describe('getCounter', () => {

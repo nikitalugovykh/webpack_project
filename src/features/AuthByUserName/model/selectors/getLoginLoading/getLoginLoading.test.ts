@@ -1,5 +1,4 @@
 import { getLoginLoading } from './getLoginLoading'
-import { type DeepPartial } from '@reduxjs/toolkit'
 import { type StateScheme } from 'app/store'
 
 describe('getLoginLoading selector', () => {

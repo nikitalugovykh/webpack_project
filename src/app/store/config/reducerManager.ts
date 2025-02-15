@@ -35,7 +35,6 @@ export function createReducerManager (initialReducers: ReducersMapObject<StateSc
 
         // Adds a new reducer with the specified key
         add: (key: StateSchemaKey, reducer: Reducer) => {
-            console.log(reducers[key], key)
             if (!key || reducers[key]) {
                 return
             }

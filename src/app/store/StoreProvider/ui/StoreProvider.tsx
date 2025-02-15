@@ -1,7 +1,7 @@
 import { type FC, type ReactNode } from 'react'
 import { Provider } from 'react-redux'
 import { createReduxStore, type StateScheme } from 'app/store'
-import { type DeepPartial, type ReducersMapObject } from '@reduxjs/toolkit'
+import { type ReducersMapObject } from '@reduxjs/toolkit'
 import { useNavigate } from 'react-router-dom'
 
 interface StoreProviderProps {

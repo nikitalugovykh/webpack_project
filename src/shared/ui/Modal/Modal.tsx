@@ -1,5 +1,5 @@
 import { type FC, type ReactNode, useCallback, type MouseEvent, useState, useRef, useEffect } from 'react'
-import { cn } from 'shared/libs/className'
+import { cn, type Mods } from 'shared/libs/className'
 import styles from './Modal.module.scss'
 import { Portal } from 'shared/ui/Portal'
 import { useTheme } from 'shared/config/theme'
@@ -21,9 +21,9 @@ export const Modal: FC<ModalProps> = (props) => {
     const { theme } = useTheme()
 
     const [isClosing, setIsClosing] = useState<boolean>(false)
-    const timeoutRef = useRef<ReturnType<typeof setTimeout>>()
+    const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [styles.opened]: isOpen,
         [styles.isClosing]: isClosing
     }

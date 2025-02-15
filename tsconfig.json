@@ -10,6 +10,7 @@
     "paths": {
       "*": ["src/*"]
     },
+    "strict": true,
     "types": ["node", "jest", "@testing-library/jest-dom"],
     "resolveJsonModule": true,
     "moduleResolution": "node",

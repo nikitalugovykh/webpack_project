@@ -7,6 +7,8 @@ import { ErrorBoundary } from 'app/providers/ErrorBoundary'
 import 'app/styles/index.scss'
 import { StoreProvider } from 'app/store/StoreProvider'
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 const root = createRoot(document.getElementById('root'))
 root.render(
     <BrowserRouter>

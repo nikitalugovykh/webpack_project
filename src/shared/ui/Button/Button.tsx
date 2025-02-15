@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes, type FC, memo, type ReactNode } from 'react'
-import { cn } from 'shared/libs/className/cn'
+import { cn, type Mods } from 'shared/libs/className/cn'
 import styles from './Button.module.scss'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -16,12 +16,12 @@ const Button: FC<ButtonProps> = (
         className,
         children,
         disabled,
-        theme = 'primary',
+        theme = 'outline',
         size = 'small',
         square,
         ...rest
     }) => {
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [styles.square]: square,
         [styles[size]]: !!size,
         [styles.disabled]: disabled

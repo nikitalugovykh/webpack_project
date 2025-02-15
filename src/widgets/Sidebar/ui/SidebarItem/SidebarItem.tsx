@@ -6,7 +6,7 @@ import { type SidebarItemType } from '../../model/items'
 import { useTranslation } from 'react-i18next'
 
 interface SidebarItemProps {
-    item?: SidebarItemType
+    item: SidebarItemType
     collapsed: boolean
 }
 

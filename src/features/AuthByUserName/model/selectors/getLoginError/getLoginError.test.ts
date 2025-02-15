@@ -1,5 +1,4 @@
 import { getLoginError } from './getLoginError'
-import { type DeepPartial } from '@reduxjs/toolkit'
 import { type StateScheme } from 'app/store'
 
 describe('getLoginError selector test', () => {

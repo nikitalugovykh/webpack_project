@@ -44,8 +44,9 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onSuccess }) => {
 
     const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUserNameThunk({ password, username }))
+
         if (result.meta.requestStatus === 'fulfilled') {
-            onSuccess()
+            onSuccess?.()
         }
     }, [dispatch, password, username, onSuccess])
 
